@@ -1,0 +1,80 @@
+
+
+<html>
+<head>
+<link rel="stylesheet" href="logincss.css">
+<script>
+
+function func(){
+	var user=document.getElementById("user").value;
+	var mail=document.getElementById("email").value;
+	if(user==""){
+		alert("User name cannot be Empty");
+		return 0;
+	}
+	if(user.length<5){
+		alert("User name must contain minimum of 5 characters");
+		return 0;
+	}
+
+	var phoneNumber=document.getElementById("mobilenumber").value;
+	if(phoneNumber==""){
+		alert("Phone number cannot be empty");
+		return 0;
+	}
+	if(!(/^\d{10}$/).test(phoneNumber)){
+		alert("Please enter avalid Mobile number");
+		return 0;
+	}
+	if(mail=="")
+		{
+		alert("Mail id cannot be empty!");
+		return 0;
+		}
+	
+
+	if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))){  
+
+		alert("You have entered Invalid email");
+		return 0;}
+
+	
+	var password=document.getElementById("password");
+	if(password==""){
+		alert("Password cannot be Empty");
+		return 0;
+	}
+	if(!( /^[A-Za-z]\w{7,14}$/.test(password))){
+		alert("Please enter a valid Password");
+		return 0;
+	}
+	
+	return 1;
+	
+}
+</script>
+</head>
+<body>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+
+    <h2 class="active"> Registration Form</h2>
+   
+
+    <form method="post" action="Registered.html"  onsubmit="return func()">
+      <input type="text" id="user" name="user" placeholder="UserId" value="">
+      <input type="text" id="mobilenumber" name="login" placeholder="Mobile Number" value="">
+      <input type="email" id="email"   name="login" placeholder="Email" value="">
+      <input type="text" id="password"  name="login" placeholder="password" value="">
+      <input type="submit" value="Register" >
+    </form>
+
+    <div id="formFooter">
+
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>
